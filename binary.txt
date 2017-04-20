@@ -1,0 +1,81 @@
+Binary Exercises
+
+1. Without using a calculator:
+
+64 in base 10 -> base 2 (example)
+	100 base 10 = 1000000 base 2
+
+100 in base 10 -> base 2
+	1100100
+
+100 in base 10 -> base 5
+	400
+
+1111111 in base 2 -> base 10
+	127
+
+2. Describe the algorithm for adding two binary numbers
+
+Example:
+    1001    9
+   +0011   +3
+   -----   --
+   01100   12
+	In adding two binary numbers, each column is added together, noting: 0+0=0, 0+1=1, and 1+1=10, each column is added together creating one of the three mentioned values. When adding one column produces a result with a 1 in the respective “2’s” place, it is carried over and added to the next left column.
+
+3. Describe the algorithm for multiplying two binary numbers
+
+Example:
+    1001    9
+   x0011   x3
+   -----   --
+   11011   27
+	In multiplying two binary numbers, each bit (starting from right to left) in one number is multiplied by each bit in the second number, where 0*0=0, 0*1=0, and 1*1=1. Each additional bit from the first number will then be multiplied by each bit in the second number. The resulting products of each bit begin (again, right to left) in the same column as their corresponding bit, pushing each additional product one more place to the left. The products are then added in the manner mentioned above.
+
+4. Is there a trick for multiplying numbers by 2? Dividing numbers by 2?
+	When multiplying, add one more zero to the end of the binary sequence.
+	When dividing, remove the last zero from the binary sequence.
+
+5. Write the truth tables for AND, OR, and NOT
+
+(example) AND:		OR:
+    ^ | a b		|| | a b	! | a b
+    -------		—————————	———————
+    1 | 1 1		 1 | 1 1	0 | 1 1
+    0 | 1 0		 1 | 1 0	1 | 1 0
+    0 | 0 1		 1 | 0 1	1 | 0 1
+    0 | 0 0		 0 | 0 0	0 | 0 0
+
+
+
+
+EXTRA CREDIT 1: Using just the operators described above, build a "half adder".
+A "half adder" takes in two inputs, A and B, and produces as output
+the "sum" of A and B, and a "carry" if one exists.
+
+
+Here is the truth table for the "half adder". + is the sum, and "C"
+is the carry.
+    + C | A B
+    ---------
+    0 0 | 0 0
+    1 0 | 0 1
+    1 0 | 1 0
+    1 1 | 1 1
+
+EXTRA CREDIT 2: Using just the operators described above, build a "full adder".
+A "full adder" takes in three inputs: A, B, and Cin (the carry in), and produces two
+outputs: the sum (S) and a carry out (Cout)
+
+Here is the truth table for the "full adder".
+
+A  B  Cin  | Cout S
+------------------
+0  0  0    |  0  0
+0  0  1    |  0  1
+0  1  0    |  0  1
+0  1  1    |  1  0
+1  0  0    |  0  1
+1  0  1    |  1  0
+1  1  0    |  1  0
+1  1  1    |  1  1
